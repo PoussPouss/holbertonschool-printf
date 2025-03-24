@@ -1,5 +1,5 @@
-#ifndef MYHEADER_H
-#define MYHEADER_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdarg.h>
 #include <stdio.h>
@@ -27,7 +27,6 @@ int _putchar(char c);
 typedef struct print_func
 {
 	char type;
-
 	int (*print_func)(va_list);
 } print_func_t;
 
