@@ -9,6 +9,8 @@
 
 int _printf(const char *format, ...);
 
+int spec_func(char format, va_list args);
+
 int print_char(va_list args);
 
 int print_string(va_list args);
