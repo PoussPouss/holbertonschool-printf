@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 		{'\0', NULL}
 	};
 
-    if (format == NULL)
+    if (format == NULL || (format[0] == '%' && format[1] == '\0'))
     return (-1);
 
 	va_start(args, format);
@@ -43,7 +43,11 @@ int _printf(const char *format, ...)
 		{
 			i++;
             if (format[i] == '%')
-            return (-1);
+            {
+                _putchar('%');
+                count++;
+                continue;
+            }
 
 			j = 0;
 			while (print_funcs[j].type != '\0')
@@ -57,9 +61,7 @@ int _printf(const char *format, ...)
 			}
             if (print_funcs[j].type == '\0')
             {
-                _putchar('%');
-                _putchar(format[i]);
-                count += 2;
+              return (-1);
             }
 		}
 		else
