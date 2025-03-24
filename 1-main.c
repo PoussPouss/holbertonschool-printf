@@ -52,8 +52,8 @@ int print_string(va_list args)
 */
 int print_percent(va_list args)
 {
-	(void)args;
 	int res = _putchar('%');
+	(void)args;
 
 	if (res == -1)
 		return (-1);
