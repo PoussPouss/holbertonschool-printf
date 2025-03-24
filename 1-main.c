@@ -7,9 +7,9 @@
 *@args: Liste des arguments variadiques
 */
 
-void print_char(va_list args)
+int print_char(va_list args)
 {
-	_putchar(va_arg(args, int));
+	return (_putchar(va_arg(args, int)));
 }
 
 
@@ -18,28 +18,31 @@ void print_char(va_list args)
 * @args: Liste des arguments variadiques
 */
 
-void print_string(va_list args)
+int print_string(va_list args)
 {
-	char *ptr = va_arg(args, char*);
+	char *str = va_arg(args, char*);
+	int count = 0;
 
-	if (ptr == NULL)
-		ptr = "(nil)";
+	if (str == NULL)
+		str = "(null)";
 
-	while (*ptr)
+	while (*str)
 	{
-		_putchar(*ptr);
-		ptr++;
+		_putchar(*str);
+		str++;
+		count++;
 	}
+	return (count);
 }
 
 /**
 * print_percent - imprime un caractère pourcentage.
 * @args: Liste des arguments variadiques
 */
-void print_percent(va_list args)
+int print_percent(va_list args)
 {
     (void)args;
-	_putchar('%');
+	return (_putchar('%'));
 }
 
 
