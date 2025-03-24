@@ -19,9 +19,9 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0;
 
-	unsigned int i = 0;
+	int i = 0;
 
-	unsigned int j = 0;
+	int j = 0;
 
 
 
