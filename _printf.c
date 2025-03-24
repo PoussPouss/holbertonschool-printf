@@ -5,25 +5,16 @@
 #include <unistd.h>
 
 /**
-* _printf - Implémentation personnalisée de la fonction printf
-* @format: Chaîne de format contenant le texte et les spécificateurs
-*          de format
-* @...: Arguments variables correspondant aux spécificateurs
-*       dans la chaîne format
-*
-* Return: Le nombre de caractères imprimés
-*/
-
+ * _printf - Implémentation personnalisée de la fonction printf
+ * @format: Chaîne de format contenant le texte et les spécificateurs
+ * @...: Arguments variables correspondant aux spécificateurs
+ *
+ * Return: Le nombre de caractères imprimés
+ */
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int count = 0;
-
-	int i = 0;
-
-	int j = 0;
-
-
+	int count = 0, i = 0, j;
 
 	print_func_t print_funcs[] = {
 		{'c', print_char},
@@ -32,11 +23,9 @@ int _printf(const char *format, ...)
 		{'\0', NULL}
 	};
 
-    if (format[i] == '%' && format[i + 1] == '\0')
-    {
-        return (-1);
-    }
-    
+	if (!format)
+		return (-1);
+
 	va_start(args, format);
 
 	while (format[i] != '\0')
@@ -44,12 +33,16 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-            if (format[i] == '%')
-            {
-                _putchar('%');
-                count++;
-                continue;
-            }
+			if (format[i] == '\0')
+				return (-1);
+
+			if (format[i] == '%')
+			{
+				_putchar('%');
+				count++;
+				i++;
+				continue;
+			}
 
 			j = 0;
 			while (print_funcs[j].type != '\0')
@@ -61,10 +54,13 @@ int _printf(const char *format, ...)
 				}
 				j++;
 			}
-            if (print_funcs[j].type == '\0')
-            {
-              return (-1);
-            }
+
+			if (print_funcs[j].type == '\0')
+			{
+				_putchar('%');
+				_putchar(format[i]);
+				count += 2;
+			}
 		}
 		else
 		{
@@ -77,3 +73,4 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
+
