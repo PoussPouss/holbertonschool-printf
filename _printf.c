@@ -17,7 +17,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int count;
+	int count = 0;
 
 	unsigned int i = 0;
 
@@ -50,6 +50,12 @@ int _printf(const char *format, ...)
 				}
 				j++;
 			}
+            if (print_funcs[j].type == '\0')
+            {
+                _putchar('%');
+                _putchar(format[i]);
+                count += 2;
+            }
 		}
 		else
 		{
