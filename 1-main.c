@@ -5,6 +5,7 @@
 /**
 *print_char - imprime un caractère.
 *@args: Liste des arguments variadiques
+*Return: Nombre de caractères imprimés (toujours 1)
 */
 
 int print_char(va_list args)
@@ -16,6 +17,7 @@ int print_char(va_list args)
 /**
 * print_string - imprime une chaîne de caractères.
 * @args: Liste des arguments variadiques
+* Return: Nombre de caractères imprimés
 */
 
 int print_string(va_list args)
@@ -38,10 +40,11 @@ int print_string(va_list args)
 /**
 * print_percent - imprime un caractère pourcentage.
 * @args: Liste des arguments variadiques
+* Return: Retourne toujours 1 (le nombre de caractères imprimés)
 */
 int print_percent(va_list args)
 {
-    (void)args;
+	(void)args;
 	return (_putchar('%'));
 }
 
