@@ -10,13 +10,11 @@ int main(void)
 
 
 	_printf("Hello %c\n", 'A');
-	_printf("Salut %s\n", "toi"); 
+	_printf("Salut %s\n", "toi");
 	_printf("Affiche %%\n");
 	_printf("Invalide %d\n", 42);
 
 
-
 return (0);
-
 
 }
