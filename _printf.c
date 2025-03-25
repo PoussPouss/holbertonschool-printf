@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int count = 0, i = 0;
-
+	int result;
 
 	if (!format)
 		return (-1);
@@ -25,7 +25,10 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			count += spec_func(format[i], args);
+			result = spec_func(format[i], args);
+			if (result == -1)
+			return (-1);
+			count += result;
 		}
 		else
 		{
