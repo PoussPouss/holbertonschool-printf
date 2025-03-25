@@ -27,5 +27,7 @@ int spec_func(char format, va_list args)
 	}
 
 
-	return (-1);
+	_putchar('%');
+	_putchar(format);
+	return (2);
 }
