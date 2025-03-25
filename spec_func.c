@@ -10,7 +10,7 @@
 */
 int spec_func(char format, va_list args)
 {
-	int j = 0;
+	int index = 0;
 
 	print_func_t print_funcs[] = {
 		{'c', print_char},
@@ -21,11 +21,11 @@ int spec_func(char format, va_list args)
 		{'\0', NULL}
 	};
 
-	while (print_funcs[j].type != '\0')
+	while (print_funcs[index].type != '\0')
 	{
-		if (format == print_funcs[j].type)
-			return (print_funcs[j].print_func(args));
-		j++;
+		if (format == print_funcs[index].type)
+			return (print_funcs[index].print_func(args));
+		index++;
 	}
 
 
