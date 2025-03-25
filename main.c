@@ -9,14 +9,10 @@ int main(void)
 {
 
 
-	_printf("Hello\n");
-	_printf("Char: %c\n", 'A');
-	_printf("String: %s\n", "Test");
-	_printf("NULL string: %s\n", NULL);
-	_printf("Percent: %%\n");
-	_printf("Unknown: %z\n");
-	_printf("%");
-	_printf("%c%c%c\n", 'H', 'i', '!');
+	_printf("Hello %c\n", 'A');
+	_printf("Salut %s\n", "toi"); 
+	_printf("Affiche %%\n");
+	_printf("Invalide %d\n", 42);
 
 
 
