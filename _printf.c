@@ -24,6 +24,14 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			if (format[i + 1] == '%')
+			{
+				_putchar('%');
+				count++;
+				i++;
+			}
+			else
+			{
 			i++;
 			result = spec_func(format[i], args);
 			if (result == -1)
@@ -32,6 +40,7 @@ int _printf(const char *format, ...)
 			return (-1);
 			}
 			count += result;
+			}
 		}
 		else
 		{
@@ -40,7 +49,6 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-
 	va_end(args);
 	return (count);
 }
