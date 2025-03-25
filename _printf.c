@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0, i = 0;
 
+
 	if (!format)
 		return (-1);
 
