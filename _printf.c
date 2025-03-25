@@ -27,7 +27,10 @@ int _printf(const char *format, ...)
 			i++;
 			result = spec_func(format[i], args);
 			if (result == -1)
+			{
+			va_end(args);
 			return (-1);
+			}
 			count += result;
 		}
 		else
