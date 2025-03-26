@@ -1,1 +1,43 @@
 .TH _printf 1 "25/03/2025" "version 1.0" "user commands"
+.SH NAME
+_printf \- formatting output
+.SH SYNOPSIS
+.nf
+.B #include "main.h"
+
+.B int_printf(const char *format, ...);
+.fi
+.SH DESCRIPTION
+.PP
+_printf is a function that displays formatted output to stdout, similar to printf.
+It supports the specifiers %c for a character, %s for a string, %% to display a literal %, and %d and %i for displaying signed integers.
+The function returns the total number of characters printed.
+.SH RETURN VALUE
+The _printf function returns the total number of characters printed, excluding the null character.
+In case of an error, it returns a negative value.
+.SH EXAMPLE
+.PP
+.B To display an integers :
+.B _printf("%d", 9);
+.B _printf("%i", 9);
+
+.B To display a character :
+.B _printf("%c", a);
+
+.B To display a string :
+.B _printf("%s", "Hello it's my man page");
+
+.B To display a percent sign :
+.B _printf("%%");
+
+.SH AUTHOR
+written by Guillaume Font
+
+
+
+
+
+
+
+
+
