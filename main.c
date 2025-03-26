@@ -9,6 +9,10 @@ int main(void)
 {
 
 
+	int len;
+
+	len = printf("hello%k\n");
+	printf("%d\n", len);
 	_printf("Hello %c\n", 'A');
 	_printf("Salut %s", "toi");
 	_printf("Affiche %%");

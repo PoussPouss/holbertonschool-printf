@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <limits.h>
 
 /**
 * spec_func - Gère l'affichage des formats (%c, %s, %%)
@@ -51,6 +52,12 @@ int print_integer(va_list args)
 	{
 		_putchar('0');
 		return (1);
+	}
+	if (num == INT_MIN)
+	{
+		num = 2147483647;
+		_putchar('-');
+		count++;
 	}
 
 	if (num < 0)
