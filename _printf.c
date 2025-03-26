@@ -30,6 +30,8 @@ int _printf(const char *format, ...)
 				count++;
 				i++;
 			}
+			else if (format[i + 1] == '\0' || spec_func(format[i + 1], args) == -1)
+			return (-1);
 			else
 			{
 			i++;
