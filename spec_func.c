@@ -55,9 +55,10 @@ int print_integer(va_list args)
 	}
 	if (num == INT_MIN)
 	{
-		num = 2147483647;
 		_putchar('-');
-		count++;
+		_putchar('2');
+		num = 147483648;
+		count += 2;
 	}
 
 	if (num < 0)
