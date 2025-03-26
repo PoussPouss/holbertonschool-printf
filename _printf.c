@@ -18,18 +18,18 @@ int _printf(const char *format, ...)
 	if (!format)
 		return (-1);
 	va_start(args, format);
+
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
+
 			if (format[i + 1] == '%')
 			{
 				_putchar('%');
 				count++;
 				i++;
 			}
-			else if (format[i + 1] == '\0' || spec_func(format[i + 1], args))
-			return (-1);
 			else
 			{
 			i++;
