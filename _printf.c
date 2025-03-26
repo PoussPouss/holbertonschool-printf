@@ -17,13 +17,13 @@ int _printf(const char *format, ...)
 
 	if (!format)
 		return (-1);
-
 	va_start(args, format);
-
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
+			if (format[i + 1] == '\0' || spec_func(format[i + 1], args) == -1)
+			return (-1);
 			if (format[i + 1] == '%')
 			{
 				_putchar('%');
@@ -44,8 +44,8 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			_putchar(format[i]);
-			count++;
+		_putchar(format[i]);
+		count++;
 		}
 		i++;
 	}

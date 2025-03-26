@@ -14,8 +14,8 @@ int main(void)
 	_printf("Affiche %%\n");
 	_printf("Invalide %d\n", 42);
 
-	printf("%d\n", 12345678990);
-	_printf("%d\n", 12345678990);
+	printf("abbc%");
+	_printf("abc%");
 
 
 return (0);
