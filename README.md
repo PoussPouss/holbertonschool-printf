@@ -42,8 +42,9 @@ int main(void)
 3. Lorsqu'un caractère '%' est rencontré, la fonction analyse le caractère suivant
 4. En fonction du spécificateur, elle appelle la fonction appropriée via `spec_func`
 5. Les fonctions spécifiques (`print_char`, `print_string`, etc.) traitent et affichent l'argument correspondant
+6. Pour l'éxécution du programme :
 ```c
-6. Pour l'éxécution du programme : gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c 
+ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c 
 ```
 
 
