@@ -17,14 +17,17 @@ int _printf(const char *format, ...)
 
 	if (!format)
 		return (-1);
+
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
-		if (format[i] == '%')
+		if (format[i] == '%')  /* Détection d'un spécificateur de format */
 		{
-			if (format[i + 1] == '\0')
+
+			if (format[i + 1] == '\0') /* Cas d'erreur: % en fin de chaîne */
 			return (-1);
-			if (format[i + 1] == '%')
+
+			if (format[i + 1] == '%') /* Cas spécial: %% pour afficher un % littéral */
 			{
 				_putchar('%');
 				count++;
@@ -33,18 +36,19 @@ int _printf(const char *format, ...)
 			else
 			{
 			i++;
-			result = spec_func(format[i], args);
-			if (result == -1)
+			result = spec_func(format[i], args); /* Appel de la fonction appropriée */
+			
+			if (result == -1)  /* Gestion d'erreur du spécificateur */
 			{
 			va_end(args);
 			return (-1);
 			}
-			count += result;
+			count += result; /* Ajout des caractères imprimés au compteur */
 			}
 		}
 		else
 		{
-		_putchar(format[i]);
+		_putchar(format[i]); /* Impression des caractères normaux (hors spécificateurs) */
 		count++;
 		}
 		i++;
