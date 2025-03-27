@@ -54,11 +54,11 @@ typedef struct print_func
 ```
 ## Flowchart
 
-![Flowchart](images/Flow_printf.png)
+- <img src="Images/Flow_printf.png"/>
 
 ## ManPage
 
-- <img src="images/Man_printf.png"/>
+- <img src="Images/Man_printf.png"/>
 
 
 
