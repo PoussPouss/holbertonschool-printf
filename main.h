@@ -35,6 +35,4 @@ typedef struct print_func
 } print_func_t;
 
 
-
-
 #endif
