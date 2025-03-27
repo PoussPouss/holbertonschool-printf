@@ -54,7 +54,7 @@ typedef struct print_func
 ```
 ## Flowchart
 
-- <img src="images/Flow_printf.png"/>
+![Flowchart](images/Flow_printf.png)
 
 ## ManPage
 
