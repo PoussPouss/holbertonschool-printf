@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 
 	if (!format)
 		return (-1);
-
+ 
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 			{
 			i++;
 			result = spec_func(format[i], args); /* Appel de la fonction appropriée */
-			
+
 			if (result == -1)  /* Gestion d'erreur du spécificateur */
 			{
 			va_end(args);
