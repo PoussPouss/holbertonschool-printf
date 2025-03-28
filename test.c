@@ -3,7 +3,8 @@
 
 int main(void)
 {
-    _printf("j'ai eu 100%");
-    printf("j'ai eu 100%");
+    char c = 'a';
+    _printf("j'ai eu 100%%je m'appel %z guillaume %", c );
+    
     return (0);
 }
